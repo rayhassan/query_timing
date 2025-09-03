@@ -1,0 +1,3 @@
+[console_scripts]
+pymongoexplain = pymongoexplain.cli_explain:cli_explain
+
