@@ -1,9 +1,14 @@
+import os
 from pymongo import MongoClient
 from concurrent.futures import ThreadPoolExecutor, as_completed
 import time
 
+from dotenv import load_dotenv
+
+load_dotenv() # take environment variables from .env.
+
 # Connect to MongoDB
-uri = "mongodb+srv://rayh:mongodb4u@sandbox.fgkzb.mongodb.net/?retryWrites=true&w=majority&appName=sandbox"
+uri = os.getenv("MONGO_URI")
 client = MongoClient(uri)
 db = client["sample_airbnb"]  # Replace with your database
 collection = db["listingsAndReviews"]  # Replace with your collection
